@@ -1,0 +1,14 @@
+node_modules/
+.astro/
+dist/
+review/
+.sites-runtime/
+.env
+.env.*
+*.log
+.DS_Store
+.export-test-*/
+OPEN_PREVIEW.html
+SOURCE_MANIFEST.json
+public/scripts/experience.bundle.js
+.openai/
