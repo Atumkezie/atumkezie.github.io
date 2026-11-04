@@ -1,0 +1,49 @@
+---
+import '../styles/site.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Sky from '../components/Sky.astro';
+const { title = 'Harikrishna Trivedi — AI & software engineering', description = 'AI agents, useful automation, and software built with care. Selected work by Harikrishna Trivedi, MS Computer Science at NJIT.', home = false, indexable = true, canonicalPath = Astro.url.pathname } = Astro.props;
+const root = import.meta.env.BASE_URL;
+const canonical = new URL(canonicalPath, Astro.site);
+---
+<!doctype html>
+<html lang="en" data-theme="day" data-motion="running">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content={description}/>
+    <meta name="theme-color" content="#dceef8"/>
+    <meta name="color-scheme" content="light dark"/>
+    <meta name="robots" content={indexable ? 'index, follow' : 'noindex, follow'}/>
+    <meta name="author" content="Harikrishna Trivedi"/>
+    <link rel="canonical" href={canonical}/>
+    <link rel="icon" type="image/svg+xml" href={`${root}favicon.svg`}/>
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Harikrishna Trivedi"/>
+    <meta property="og:url" content={canonical}/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content={title}/>
+    <meta name="twitter:description" content={description}/>
+    <title>{title}</title>
+    <script is:inline src={`${root}scripts/preferences.js`}></script>
+    <script is:inline>
+      document.documentElement.dataset.js = 'true';
+      window.HKPreferences.applyInitial(document.documentElement, window);
+    </script>
+    <script is:inline src={`${root}scripts/loading.js`}></script>
+  </head>
+  <body id="top" class={home ? 'portfolio-home' : 'portfolio-case'}>
+    <Sky/>
+    <div class="page-loader" aria-hidden="true"><div class="loader-content"><div class="loader-score"><i></i><i></i><i></i><i></i><i></i></div><span>THOUGHT · CODE · COMPOSITION</span></div></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header home={home}/>
+    <main id="main"><slot/></main>
+    <Footer/>
+    <span class="sr-only" data-environment-status aria-live="polite"></span>
+    <script is:inline defer src={`${root}scripts/environment.js`}></script>
+    <script is:inline defer src={`${root}scripts/experience.bundle.js`}></script>
+  </body>
+</html>
