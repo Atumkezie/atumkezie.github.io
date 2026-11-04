@@ -1,0 +1,15 @@
+---
+const { home = false } = Astro.props;
+const root = import.meta.env.BASE_URL;
+const prefix = home ? '' : root;
+---
+<header class="site-nav">
+  <svg class="nav-shape" viewBox="0 0 460 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H460C424 0 439 58 399 58H61C21 58 36 0 0 0Z"/></svg>
+  <a class="nav-mark" href={root} aria-label="Harikrishna Trivedi, home">hk<span>·</span></a>
+  <nav aria-label="Main navigation"><a href={`${prefix}#about`}>About</a><a href={`${prefix}#work`}>Work</a><a href={`${prefix}#music`}>Music</a></nav>
+  {home ? <button class="sound-button js-control" type="button" data-performance-toggle aria-label="Play Harikrishna's keyboard performance" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5L5 9H2V15H5L10 19ZM14 8Q19 12 14 16M17 4Q25 12 17 20"/></svg></button> : <a class="nav-contact" href={`${root}#contact`} aria-label="Contact Harikrishna">↗</a>}
+</header>
+<div class="theme-dock js-control" role="group" aria-label="Choose day or night">
+  <button type="button" data-theme-choice="day" aria-label="Day mode" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1V4M12 20V23M1 12H4M20 12H23M4 4L6 6M18 18L20 20M4 20L6 18M18 6L20 4"/></svg></button>
+  <button type="button" data-theme-choice="night" aria-label="Night mode" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15A9 9 0 0 1 9 4A9 9 0 1 0 20 15Z"/><path d="M18 3V7M16 5H20"/></svg></button>
+</div>

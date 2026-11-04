@@ -1,0 +1,13 @@
+---
+const { compact = false } = Astro.props;
+---
+<div class:list={['care-preview', { compact }]} aria-hidden="true">
+  <div class="care-side"><span class="care-monogram">c<span>·</span></span><span class="care-side-line active"></span><span class="care-side-line"></span><span class="care-side-line"></span><span class="care-side-bottom">CC / 02</span></div>
+  <div class="care-screen">
+    <div class="care-topline"><strong>CareContext</strong><span>Research workspace <i></i></span></div>
+    <div class="care-content"><span class="care-eyebrow">CONTEXT BEFORE CONCLUSIONS</span><h3>A question worth asking.<br/><em>Evidence worth opening.</em></h3><div class="care-query"><span>Explore the literature. Inspect the source.</span><span class="care-query-arrow" aria-hidden="true">↗</span></div><div class="care-topics"><span>Literature</span><span>Synthetic records</span><span>Source review</span></div>
+      <div class="care-results"><div class="care-result"><span class="source-number">01</span><div><span class="source-tag">LITERATURE</span><strong>Follow the question to its source.</strong><p>Study metadata · Abstract · PubMed link</p></div><span aria-hidden="true">↗</span></div><div class="care-result"><span class="source-number">02</span><div><span class="source-tag">RECORD REVIEW</span><strong>Keep the context attached.</strong><p>Dated excerpts · Citations · Reviewer notes</p></div><span aria-hidden="true">↗</span></div></div>
+    </div>
+    <div class="care-screen-foot"><span>Sources remain inspectable.</span><span>Research prototype</span></div>
+  </div>
+</div>
