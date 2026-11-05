@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import CarePreview from '../components/CarePreview.astro';
+import PatchPreview from '../components/PatchPreview.astro';
+import { patchpilotGithub, carecontextGithub, carecontextGithubLabel } from '../data/projects.mjs';
+const root = import.meta.env.BASE_URL;
+const statement = 'I’m Harikrishna Trivedi. Fifteen years at the keyboard. A growing life in software. Always following the next question.'.split(' ');
+---
+<Base home={true}>
+  <section class="hero-track" data-hero-track aria-labelledby="hero-title">
+    <div class="hero-stage" id="hero-stage" data-hero-stage>
+      <div class="hero-composition">
+        <h1 id="hero-title">HARIKRISHNA TRIVEDI <span>AI · SOFTWARE · MUSIC</span></h1>
+        <blockquote class="hero-quote"><span>AI finds the patterns.</span><span>Music makes you feel them.</span><span class="quote-accent">I build in the space between.</span></blockquote>
+        <svg class="hero-score" viewBox="0 0 700 100" aria-hidden="true"><path d="M0 68C140 68 120 12 270 38S460 95 700 24M0 76C140 76 120 20 270 46S460 103 700 32M0 84C140 84 120 28 270 54S460 111 700 40"/><circle cx="270" cy="46" r="4"/><circle cx="533" cy="64" r="3"/></svg>
+      </div>
+      <div class="hero-caption"><p>Engineering with curiosity. Playing with feeling.</p><a href="#about">SCROLL INTO THE STORY <span aria-hidden="true">↓</span></a></div>
+      <span class="hero-margin-note">A PERSONAL PORTFOLIO / 2026</span>
+    </div>
+  </section>
+
+  <section class="about content-shell" id="about" aria-labelledby="about-title">
+    <div class="intro" data-statement><p class="statement-text">{statement.map((word, index) => <><span data-word style={`--word-index:${index}`}>{word}</span>{' '}</>)}</p><span class="intro-byline">MS COMPUTER SCIENCE AT NJIT · NEWARK, NJ</span></div>
+    <div class="section-heading" data-reveal><h2 id="about-title">From keys to code.</h2><span>A LITTLE OF THE JOURNEY</span></div>
+    <div class="journey-panel">
+      <ol class="journey">
+        <li data-reveal><span class="journey-date">15 YEARS & COUNTING</span><span class="journey-point" aria-hidden="true"></span><h3>It starts with listening.</h3><p>Piano and keyboard, learning with London College of Music. A practice I keep coming back to.</p></li>
+        <li data-reveal data-reveal-order="1"><span class="journey-date">2023 / FULL-STACK</span><span class="journey-point" aria-hidden="true"></span><h3>Then, building.</h3><p>At Vohra Wound Physicians, I worked on features and fixes across a .NET application.</p></li>
+        <li data-reveal data-reveal-order="2"><span class="journey-date">2026 / APPLIED AI</span><span class="journey-point" aria-hidden="true"></span><h3>Ideas meet real work.</h3><p>At Vedlogic Solutions, I worked with AI and workflow automation to help everyday operations.</p></li>
+        <li data-reveal data-reveal-order="3"><span class="journey-date">NOW / NJIT</span><span class="journey-point" aria-hidden="true"></span><h3>The next question.</h3><p>My MS in Computer Science, and independent projects exploring AI agents and evidence-aware software.</p></li>
+      </ol>
+      <div class="journey-foot" data-reveal><p>One internship started with a founder’s post about a problem. I made a presentation, reached out, and turned that conversation into an opportunity.</p><a href={`${root}Harikrishna_Trivedi_Resume.pdf`} download class="card-link">The full story · Résumé <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </section>
+
+  <section class="work content-shell" id="work" aria-labelledby="work-title">
+    <div class="section-heading" data-reveal><h2 id="work-title">Selected work.</h2><span>2026 / TWO INDEPENDENT PROJECTS</span></div>
+    <div class="work-grid">
+      <article class="work-card" data-reveal><a class="work-image patch-image" href={`${root}work/patchpilot/`} aria-label="Read the PatchPilot AI case study"><div class="work-image-inner"><PatchPreview/></div><span class="image-note">INTERFACE ILLUSTRATION</span></a><div class="work-card-caption"><div class="work-card-heading"><h3>PatchPilot AI</h3><span>AI AGENTS / DEVELOPER TOOLS</span></div><p>A scoped patch, executable evidence, and a human decision. Supervised software repair from issue to review.</p><div class="project-links"><a class="card-link" href={`${root}work/patchpilot/`}>View the case study <span aria-hidden="true">↗</span></a><a class="card-link" href={patchpilotGithub} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div></article>
+      <article class="work-card" data-reveal data-reveal-order="1"><a class="work-image care-image" href={`${root}work/carecontext/`} aria-label="Read the CareContext case study"><div class="work-image-inner"><CarePreview/></div><span class="image-note">INTERFACE ILLUSTRATION</span></a><div class="work-card-caption"><div class="work-card-heading"><h3>CareContext</h3><span>HEALTHTECH / SOURCE REVIEW</span></div><p>Literature discovery and synthetic record review, with the source kept close to the question.</p><div class="project-links"><a class="card-link" href={`${root}work/carecontext/`}>View the case study <span aria-hidden="true">↗</span></a><a class="card-link" href={carecontextGithub} target="_blank" rel="noopener noreferrer">{carecontextGithubLabel} <span aria-hidden="true">↗</span></a></div></div></article>
+    </div>
+  </section>
+
+  <section class="music content-shell" id="music" aria-labelledby="music-title">
+    <div class="section-heading" data-reveal><h2 id="music-title">Music.</h2><span>PIANO & KEYBOARD</span></div>
+    <div class="music-layout"><div class="music-text" data-reveal><span class="eyebrow">15 YEARS OF PLAYING & LEARNING</span><h3>Away from<br/>the screen.</h3><p>I’ve been learning and playing piano and keyboard for 15 years, with London College of Music.</p><p>Here’s a small recording of me at the keyboard.</p><button class="listen-link js-control" type="button" data-performance-link aria-pressed="false"><span data-performance-label>Play the recording</span> <span aria-hidden="true">↗</span></button></div><figure class="music-player" data-reveal><div class="video-frame"><video id="keyboard-performance" controls playsinline preload="none" poster={`${root}media/keyboard-poster.jpg`} aria-label="Harikrishna playing keyboard, an 18-second instrumental performance"><source src={`${root}media/harikrishna-keyboard.mp4`} type="video/mp4"/>Your browser cannot play the recording. <a href={`${root}media/harikrishna-keyboard.mp4`}>Download the performance</a>.</video></div><figcaption><span>A PERSONAL RECORDING</span><span>00:18 / SOUND BY REQUEST</span></figcaption></figure></div>
+  </section>
+
+</Base>
