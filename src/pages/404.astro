@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+const root = import.meta.env.BASE_URL;
+---
+<Base title="Page not found — Harikrishna Trivedi" description="Return to Harikrishna Trivedi's portfolio." indexable={false} canonicalPath={`${root}404.html`}>
+  <section class="case-hero shell" style="min-height:65svh;padding-bottom:70px">
+    <div class="case-category">404 / PAGE NOT FOUND</div>
+    <h1>A little off-key<span>.</span></h1>
+    <p class="case-deck">Let’s get you<br/><em>back to the story.</em></p>
+    <div class="case-actions"><a class="primary-link" href={root}>Back to the homepage <span aria-hidden="true">↗</span></a><a class="primary-link" href={`${root}#work`}>Explore the work <span aria-hidden="true">↗</span></a></div>
+  </section>
+</Base>
